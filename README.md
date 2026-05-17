@@ -30,7 +30,7 @@ User message
      │
      ▼
 ┌─────────────────────┐
-│  Distress Analyzer  │  ← Groq LLaMA 3.1 scores severity 1–5
+│  Distress Analyzer  │  ← Groq LLaMA 3.3 scores severity 1–5
 │                     │    and detects emotion tags
 └────────┬────────────┘
          │

@@ -19,7 +19,7 @@ This agent acts as an **always-available first line of support** — empathetic,
 ---
 
 
-**Live demo →** [huggingface.co/spaces/YOUR_USERNAME/mental-health-agent](https://huggingface.co/spaces/YOUR_USERNAME/mental-health-agent)
+**Live demo →** 
 
 ---
 

@@ -99,7 +99,7 @@ Auto-escalation kicks in if the user's severity score **worsens across 3 consecu
 | Deployment | Hugging Face Spaces | Free public hosting with shareable URL |
 
 > **Why LLM for sentiment analysis instead of a fine-tuned classifier?**
-> LLaMA 3.1 outperforms traditional sentiment models on nuanced emotional language, requires zero labeled training data, and generalizes across languages and cultural contexts out of the box.
+> LLaMA 3.3 outperforms traditional sentiment models on nuanced emotional language, requires zero labeled training data, and generalizes across languages and cultural contexts out of the box.
 
 ---
 
@@ -151,9 +151,9 @@ mental-health-agent/
 │
 ├── agent/
 │   ├── __init__.py
-│   ├── distress_analyzer.py        # Groq LLM scores severity 1–5 + emotion tags
+│   ├── distress.py        # Groq LLM scores severity 1–5 + emotion tags
 │
-│   ├── session_memory.py           # Tracks mood trend, detects worsening, auto-escalates
+│   ├── session_mem.py           # Tracks mood trend, detects worsening, auto-escalates
 │   └── response_composer.py        # Generates final empathetic reply using full context
 │
 ├── tools/

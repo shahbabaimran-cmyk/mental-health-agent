@@ -2,7 +2,7 @@
 
 > An AI-powered agent that triages mental health crises in real time — detecting distress levels, routing to the right resources, and tracking mood trends across a conversation.
 
-**Built with Groq (LLaMA 3.1) + Streamlit · 100% free to run · No model training required**
+**Built with Groq (LLaMA 3.3) + Streamlit · 100% free to run · No model training required**
 
 ---
 

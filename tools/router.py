@@ -1,7 +1,7 @@
 from tools.breathing_excer import get_breathing_exercise, format_exercise
 from tools.hotline import get_hotlines, format_hotlines
 from tools.safety import generate_safety_plan
-
+from tools.message_friend import message_friend
 
 def route(analysis: dict, country: str = "pakistan") -> dict:
     """
@@ -48,6 +48,7 @@ def route(analysis: dict, country: str = "pakistan") -> dict:
     elif severity == 4:
         exercise = get_breathing_exercise(primary_emotion)
         hotlines = get_hotlines(country)
+        message_friend(primary_emotion)
         return {
             "level": "crisis",
             "resources": [

@@ -26,6 +26,7 @@ Return this exact JSON structure:
   "severity": <integer 1 to 5>,
   "emotions": [<list of emotion strings>],
   "summary": "<one sentence explaining the distress level>"
+  "number": [<list of phone numbers if mentioned by the user>]
 }}
 
 Severity scale:
@@ -38,13 +39,13 @@ Severity scale:
 Examples:
 Message: "I'm a bit tired today" → {{"severity": 1, "emotions": ["fatigue"], "summary": "User is mildly tired but not distressed."}}
 Message: "I can't stop crying and I don't know why" → {{"severity": 3, "emotions": ["sadness", "confusion", "overwhelm"], "summary": "User is experiencing emotional breakdown without a clear cause."}}
-Message: "I don't want to be here anymore" → {{"severity": 5, "emotions": ["hopelessness", "suicidal ideation"], "summary": "User is expressing suicidal ideation and needs immediate crisis support."}}
+Message: "I don't want to be here anymore" → {{"severity": 5, "emotions": ["hopelessness", "suicidal ideation"], "summary": "User is expressing suicidal ideation and needs immediate crisis support.","number:03369139972("alex")}}
 """
 
     response = client.chat.completions.create(
         model="llama-3.3-70b-versatile",
         messages=[{"role": "user", "content": prompt}],
-        temperature=0.4,  # low temp = consistent, predictable JSON
+        temperature=0.2,  # low temp = consistent, predictable JSON
     )
 
     raw = response.choices[0].message.content.strip()
@@ -56,7 +57,8 @@ Message: "I don't want to be here anymore" → {{"severity": 5, "emotions": ["ho
         result = {
             "severity": 2,
             "emotions": ["unknown"],
-            "summary": "Could not parse response. Defaulting to mild distress."
+            "summary": "Could not parse response. Defaulting to mild distress.",
+            "number": "No number avail."
         }
 
     return result
